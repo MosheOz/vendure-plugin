@@ -1,0 +1,58 @@
+####
+GET http://localhost:3000/notifyUrl 
+
+
+
+#######
+# Scribble Pad
+
+#  First Part
+
+
+#     /payment : https://secure.cardcom.solutions/Interface/LowProfile.aspx (GET 38 chunks)
+#                if (body.CreateInvoice && body.Operation !== 3)
+#                if (body.Operation === 2 || body.Operation === 3)
+#                if (body.Operation === 4)
+
+#                vars gets initialized by body data(38 entries) 
+
+#                Just Output the urls and save the "url"
+
+
+#     /NotifyUrl : Look at structure of req by bank server
+#                link to make req: https://secure.cardcom.co.il/Interface/CancelDeal.aspx
+#                data: POST 6 chunks
+#                save info when the req is being made by bank server ("TokenDetails")
+                             
+#     /success   : Success Page is working (requests low profile code of user)
+
+#     /cancel-deal : when the user press the cancel button(Internal work clear row with "low-profile-code")
+#                  link to make req: https://secure.cardcom.co.il/Interface/CancelDeal.aspx
+    
+#     /create-token : creates a refund token (save "TokenDetails")(25 chunks)
+#                   link to make req: https://secure.cardcom.solutions/Interface/ChargeToken.aspx
+
+#     /refund-token : refunds at token (fetch "TokenDetails") (25 chunks)
+#                   link to make req (same as create with one parameter change)
+
+
+
+# Second Part 
+
+#     /create-hold-deal : create refund token 
+#                       link reference : https://bfsmvlnwl6se6kpugsjrfjrxgy--kb-cardcom-co-il.translate.goog/article/AA-00271/0
+
+#     /charge-hold-deal : refunds
+#                       link : https://secure.cardcom.solutions/interface/SuspendedDealActivate.aspx (chunks 4)
+
+#     /cancel-hold-deal : cancels
+#                       link reference : https://dac4zcystzykyq5ytogamxkmfm--kb-cardcom-co-il.translate.goog/article/AA-00475/0/ 
+#                       link : https://secure.cardcom.solutions/Interface/DeleteSuspendedDeal.aspx
+
+#     /notifyHoldDealUrl : requested by server (project should be at global server)
+                        
+
+
+
+
+#######
